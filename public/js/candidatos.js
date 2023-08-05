@@ -1,6 +1,30 @@
-// Função para inserir dependentes: 
-let tela_dep = document.querySelector(".tela_dependentes");
-document.getElementById("btn_dependentes").onclick = function () {
+
+
+  let botaoNao = document.querySelector('#btn_nao');
+  let botaoSim = document.querySelector('#btn_check');
+
+  function alternarBotoes() {
+    if (!botaoSim.disabled) {
+      botaoSim.disabled = true;
+      botaoSim.style.backgroundColor = "blue";
+      botaoSim.style.color = "white";
+      botaoNao.style.backgroundColor = "initial";
+      botaoNao.style.color = "initial";
+    } else {
+      botaoSim.disabled = false;
+      botaoSim.style.backgroundColor = "initial";
+      botaoSim.style.color = "initial";
+      botaoNao.style.backgroundColor = "blue";
+      botaoNao.style.color = "white";
+    }
+  }
+
+  botaoSim.addEventListener('click', alternarBotoes);
+  botaoNao.addEventListener('click', alternarBotoes);
+
+  // Função para inserir dependentes:
+  let tela_dep = document.querySelector(".tela_dependentes");
+  document.getElementById("btn_dependentes").onclick = function () {
     let texto = "";
     texto += `
     <label> Digite as informações do dependente: </label>
@@ -15,21 +39,25 @@ document.getElementById("btn_dependentes").onclick = function () {
     <input type="text" name="grau" placeholder="Informe o grau de parentesco:">
     `;
     tela_dep.innerHTML = texto;
-};
+  };
 
-// FUnção para inserir parentes
-let tela_parentes = document.querySelector(".tela_parentes");
-document.getElementById("btn_check").onclick = function () {
-        let string = "";
-        string += `
-    <label>Insira o nome:</label>
-    <input type="text" name="" placeholder="Insira o nome:">
-    <input type="text" name="" placeholder="Insira o carg:">
-    <input type="text" placeholder="Insira a cidade:">
-    `
-    ;
-    tela_parentes.innerHTML = string;
-}
+  // FUnção para inserir parentes
+  let tela_parentes = document.querySelector(".tela_parentes");
+  document.getElementById("btn_check").onclick = function () {
+    let string = "";
+    if (botaoSim.disabled) {
+      string += `
+        <label>Insira o nome:</label>
+        <input type="text" name="" placeholder="Insira o nome:">
+        <input type="text" name="" placeholder="Insira o cargo:">
+        <input type="text" placeholder="Insira a cidade:">
+      `;
+      tela_parentes.innerHTML = string;
+    } else {
+      tela_parentes.innerHTML = "";
+    }
+  };
+
 
 
 //Função que envia mensagem para o Wpp ao terminar cadastro
@@ -48,3 +76,7 @@ document.querySelector('#submit').addEventListener('click',function(){
    window.open("https://api.whatsapp.com/send?phone=" + celular + "&text=" + url,"_blank");
     }
    });
+
+   
+
+   
