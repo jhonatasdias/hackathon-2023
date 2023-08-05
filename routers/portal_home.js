@@ -3,6 +3,8 @@ const path = require('path');
 
 const portalHomeController = require('../controllers/portal_home');
 
+const portalInternoController = require('../controllers/portal_interno');
+
 const router = express.Router();
 
 // Routers
@@ -18,22 +20,25 @@ router.get('/cadastrocandidatos', (req, res, next) => {
     console.log('Acessando cadastrocandidatos.html');
 })
 
-// / => GET
+// /cadastroreports => GET
 router.get('/cadastroreports', (req, res, next) => {
     res.sendFile(path.join(__dirname, '../views','cadastroreports.html'));
-    console.log('Acessando Index.html');
+    console.log('Acessando cadastroreports.html');
 })
+
+// /reports => POST
+/* router.post('/reports', portalInternoController.); */
 
 // / => GET
 router.get('/equipamentos', (req, res, next) => {
     res.sendFile(path.join(__dirname, '../views','equipamentos.html'));
-    console.log('Acessando Index.html');
+    console.log('Acessando equipamentos.html');
 })
 
 // / => GET
 router.get('/login', (req, res, next) => {
     res.sendFile(path.join(__dirname, '../views','login.html'));
-    console.log('Acessando Index.html');
+    console.log('Acessando login.html');
 })
 
 // Cadastramento dos candidatos
