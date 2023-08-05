@@ -85,11 +85,102 @@ class Dados {
     }
 }
 
+// Classe do formulário
 class Formulario {
-    constructor(nome_completo, cidade, candidato_status){
-        this.nome_completo = nome_completo;
-        this.cidade = cidade;
-        this.candidato_status = candidato_status;
+    constructor(
+        nome_completo, 
+        nome_mae, 
+        nome_pai,
+        sexo,
+        estado_civil,
+        grau_instrucao,
+        raca,
+        data_nascimento,
+        nacionalidade,
+        pais_nascimento,
+        estado_nascimento,
+        cidade_nascimento,
+        numero_botina,
+        numero_calca,
+        tamanho_camisa,
+        telefone_1,
+        telefone_2,
+        email,
+        cep,
+        estado,
+        bairro,
+        rua,
+        complemento,
+        numero_rg,
+        emissor_rg,
+        emissor_estado,
+        emissor_cidade,
+        emissor_data,
+        cpf,
+        num_pis_pasep,
+        funcoes_id,
+        alojado,
+        pcd,
+        rg_url,
+        cpf_url,
+        curriculo_url,
+        cnh_url,
+        reservista_url,
+        parente_nome,
+        parente_cargo,
+        parente_cidade,
+        dependente_nome,
+        dependente_cpf,
+        dependente_sexo,
+        dependente_data_nascimento,
+        dependente_grau_parentesco,
+        ){
+            this.nome_completo = nome_completo;
+            this.nome_mae = nome_mae;
+            this.nome_pai = nome_pai;
+            this.sexo = sexo;
+            this.estado_civil = estado_civil;
+            this.grau_instrucao = grau_instrucao;
+            this.raca = raca;
+            this.data_nascimento = data_nascimento;
+            this.nacionalidade = nacionalidade;
+            this.pais_nascimento = pais_nascimento;
+            this.estado_nascimento = estado_nascimento;
+            this.cidade_nascimento = cidade_nascimento;
+            this.numero_botina = numero_botina;
+            this.numero_calca = numero_calca;
+            this.tamanho_camisa = tamanho_camisa;
+            this.telefone_1 = telefone_1;
+            this.telefone_2 = telefone_2;
+            this.email = email;
+            this.cep = cep;
+            this.estado = estado;
+            this.bairro = bairro;
+            this.rua = rua;
+            this.complemento = complemento;
+            this.numero_rg = numero_rg;
+            this.emissor_rg = emissor_rg;
+            this.emissor_estado = emissor_estado;
+            this.emissor_cidade = emissor_cidade;
+            this.emissor_data = emissor_data;
+            this.cpf = cpf;
+            this.num_pis_pasep = num_pis_pasep;
+            this.funcoes_id = funcoes_id;
+            this.alojado = alojado;
+            this.pcd = pcd;
+            this.rg_url = rg_url;
+            this.cpf_url = cpf_url;
+            this.curriculo_url = curriculo_url;
+            this.cnh_url = cnh_url;
+            this.reservista_url = reservista_url;
+            this.parente_nome = parente_nome;
+            this.parente_cargo = parente_cargo;
+            this.parente_cidade = parente_cidade;
+            this.dependente_nome = dependente_nome;
+            this.dependente_cpf = dependente_cpf;
+            this.dependente_sexo = dependente_sexo;
+            this.dependente_data_nascimento = dependente_data_nascimento;
+            this.dependente_grau_parentesco = dependente_grau_parentesco;
     }
 }
 
