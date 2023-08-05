@@ -1,3 +1,4 @@
+// Modules
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -5,13 +6,17 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }))
-const routers = require('./routers/router');
+const routers = require('./routers/portal_home');
+const adminRouter = require('./routers/admin');
 
 // Static Files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routers
+// Routers - Websites
 app.use('/', routers);
+
+// Routers - Admin
+app.use('/admin', adminRouter);
 
 // Page I Not Found
 app.use((req, res, next) => {
@@ -19,7 +24,7 @@ app.use((req, res, next) => {
     console.log('Page Not Found');
 })
 
-
+// Start Server
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Servidor iniciado http://localhost:${PORT}`);
