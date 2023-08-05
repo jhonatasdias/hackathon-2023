@@ -17,6 +17,8 @@
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css"
@@ -25,10 +27,15 @@
 
   <!-- Custom styles for this template -->
   <link href="../public/css/style.css" rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="../public/css/responsive.css" rel="stylesheet" />
+  <link href="/css/responsive.css" rel="stylesheet" />
+
   <!-- Função para pegar as -->
   <script type="text/javascript" src="../public/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+
   <script type="text/javascript">
 
     $(document).ready(function () {
@@ -147,7 +154,7 @@
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
               <h3>WebTech</h3>
             </a>
             </a>
@@ -160,19 +167,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav  ">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="cadastrocandidatos.html">Cadastro Candidatos</a>
+                  <a class="nav-link" href="/cadastrocandidatos">Cadastro Candidatos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="cadastroreports.html"> Cadastro Reports</a>
+                  <a class="nav-link" href="/cadastroreports"> Cadastro Reports</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="equipamentos.html"> Equipamentos Cadastrados </a>
+                  <a class="nav-link" href="/equipamentos"> Equipamentos Cadastrados </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="login.html"> Login</a>
+                  <a class="nav-link" href="/login"> Login</a>
                 </li>
                 <form class="form-inline">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
@@ -312,11 +319,11 @@
                 <h4>Contato</h4>
                 <div>
                   <label>DDD | Telefone*: </label>
-                  <input required="required" id="telefone" name="telefone_1" type="number" placeholder="Ex:11999999999">
+                  <input required="required" id="telefone" name="telefone_1" type="text" placeholder="Ex:11999999999">
                 </div>
                 <div>
                   <label>DDD | Telefone2: </label>
-                  <input type="number" name="telefone_2" placeholder="Ex:11999999999">
+                  <input type="text" name="telefone_2" placeholder="Ex:11999999999">
                 </div>
                 <div>
                   <label>Email: </label>
@@ -357,7 +364,7 @@
                   </div>
                   <div>
                     <label for="cpf">Número do CPF*:</label>
-                    <input required="required" name="cpf" type="number" placeholder="Ex: 99999999999" />
+                    <input required="required" name="cpf" type="cpf" placeholder="Ex: 99999999999" />
                   </div>
                   <div>
                     <label>Número do PIS/PASEP*:</label>
@@ -403,7 +410,7 @@
                   </div>
                   <div>
                     <h5>POSSUI ALGUM PARENTE OU AMIGO QUE TRABALHA NA ALFA?</h5>
-                    <input required="required" type="button" id="btn_check" value="Sim">
+                    <input type="button" id="btn_check" value="Sim">
                     <input type="button" id="btn_nao" value="Não">
                     <div class="tela_parentes">
                     </div>
@@ -411,7 +418,7 @@
                   <hr>
                   <div>
                     <h5>Dependentes:</h5>
-                    <input type="button" id="btn_dependentes" value="Adicionar dependetes"></input>
+                    <input type="button" id="btn_dependentes" value="Adicionar Dependentes">
                     <div class="tela_dependentes">
                     </div>
                   </div>
@@ -444,9 +451,14 @@
 
   <!--script-->
   <script src="../public/js/candidatos.js"></script>
+  <script src="/js/candidatos.js"></script>
   <!-- jQery -->
   <script src="../public/js/jquery-3.4.1.min.js"></script>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+
   <script src="../public/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery-3.3.1.min.js"></script>
+
 
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -454,6 +466,8 @@
     </script>
   <!-- bootstrap js -->
   <script src="../public/js/bootstrap.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
   <!-- owl slider -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
@@ -461,6 +475,8 @@
   <script src="https://huynhhuynh.github.io/owlcarousel2-filter/dist/owlcarousel2-filter.min.js"></script>
   <!-- custom js -->
   <script src="../public/js/custom.js"></script>
+  <script src="/js/custom.js"></script>
+
 
 
 </body>
