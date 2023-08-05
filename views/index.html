@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css"> <!-- node -->
+    <link rel="stylesheet" href="../public/css/style.css"> <!-- sem node -->
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>index</h1>
+
+    <form action="/formulario" method="post">
+        <label for="nome_completo">Nome Completo</label><br>
+        <input type="text" name="nome_completo" id="nome_completo"><br>
+        <label for="cidade">Cidade</label><br>
+        <input type="text" name="cidade" id="cidade"><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+
+
+    <script src="/js/script.js"></script>
 </body>
 </html>
