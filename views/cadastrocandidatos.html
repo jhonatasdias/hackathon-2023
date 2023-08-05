@@ -36,6 +36,14 @@
   <script type="text/javascript" src="../public/js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
 
+  <style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+
   <script type="text/javascript">
 
     $(document).ready(function () {
@@ -203,15 +211,15 @@
       <div class="row justify-content-center">
         <div class="col-lg-12 ">
           <div class="heading_container text-center">
-            <h2>
-              Cadastro de Candidatos
-            </h2>
+            
           </div>
         </div>
 
         <div class="row justify-content-center">
-          <div class="col-lg-4 col-md-5 ">
-            <div class="form_container">
+          <div class="col-lg-6 col-md-5 ">
+            <div class="form_container"><h1>
+              Cadastro de Candidatos
+            </h1>
               <p>ATENÇÃO: o preenchimento dessas informações é de suma importância para o seu prosseguimento no
                 processo
                 seletivo. Todos os campos são
@@ -340,97 +348,99 @@
                     <label>Rua: <input required="required" name="rua" type="text" id="txtRua"></label>
                     <label>Complemento: <input type="text" name="complemento" id="txtComplemento"></label>
                   </div>
-                  <hr>
-                  <h4>Carteira de Identidade, CPF e PIS</h4>
-                  <div>
-                    <label id="rg" for="rg">Número da Carteira de Identidade (RG)*:</label>
-                    <input required="required" name="numero_rg" type="number" placeholder="Ex: 99999999999" />
-                  </div>
-                  <div>
-                    <label for="org">Orgão Emisor da Carteira de Identidade:</label>
-                    <input type="text" name="emissor_rg" placeholder="Ex: (SSP, SJC, SJT)" />
-                  </div>
-                  <div>
-                    <label for="est">Estado do Orgão Emissor(RG)*:</label>
-                    <select name="emissor_estado" id="estados">
-                      <option value=""></option>
-                    </select>
-                    <select name="emissor_cidade" id="cidades">
-                    </select>
-                  </div>
-                  <div>
-                    <label for="DT">Data de Expedição da Identidade:</label>
-                    <input name="emissor_data" id="date" type="date">
-                  </div>
-                  <div>
-                    <label for="cpf">Número do CPF*:</label>
-                    <input required="required" name="cpf" type="cpf" placeholder="Ex: 99999999999" />
-                  </div>
-                  <div>
-                    <label>Número do PIS/PASEP*:</label>
-                    <input required="required" name="num_pis_pasep" type="number" placeholder="Ex: 99999999999" />
-                  </div>
-                  <hr>
-                  <h4>Outros</h4>
-                  <div>
-                    <label for="func">Função*:</label>
-                    <input required="required" name="funcoes_id" type="text"
-                      placeholder="Ex: Administrador Contratual" />
-                  </div>
-                  <div>
-                    <label for="func">Alojado*:</label>
-                    <select name="alojado" id="aloj">
-                      <option> Escolha uma opção</option>
-                      <option value="sim"> Sim </option>
-                      <option value="nao"> Não </option>
+            
+                      <hr>
+                      <h4>Carteira de Identidade, CPF e PIS</h4>
+                      <div>
+                        <label id="rg" for="rg">Número da Carteira de Identidade (RG)*:</label>
+                        <input required="required" name="numero_rg" type="number" placeholder="Ex: 99999999999" />
+                      </div>
+                      <div>
+                        <label for="org">Orgão Emisor da Carteira de Identidade:</label>
+                        <input required="required" type="text" name="emissor_rg" placeholder="Ex: (SSP, SJC, SJT)" />
+                      </div>
+                      <div>
+                        <label for="est">Estado do Orgão Emissor(RG)*:</label>
+                        <select name="emissor_estado" id="estados">
+                          <option value=""></option>
+                        </select>
+                        <select name="emissor_cidade" id="cidades">
+                        </select>
+                      </div>
+                      <div>
+                        <label for="DT">Data de Expedição da Identidade:</label>
+                        <input required="required" name="emissor_data" id="date" type="date">
+                      </div>
+                      <div>
+                        <label for="cpf">Número do CPF*:</label>
+                        <input required="required" name="cpf" type="cpf" placeholder="Ex: 99999999999" />
+                      </div>
+                      <div>
+                        <label>Número do PIS/PASEP*:</label>
+                        <input required="required" name="num_pis_pasep" type="number" placeholder="Ex: 99999999999" />
+                      </div>
+                      <hr>
+                      <h4>Outros</h4>
+                      <div>
+                        <label for="func">Função*:</label>
+                        <input required="required" name="funcoes_id" type="text"
+                          placeholder="Ex: Administrador Contratual" />
+                      </div>
+                      <div>
+                        <label for="func">Alojado*:</label>
+                        <select name="alojado" id="aloj">
+                          <option> Escolha uma opção</option>
+                          <option value="sim"> Sim </option>
+                          <option value="nao"> Não </option>
 
-                    </select>
-                  </div>
-                  <div>
-                    <label for="func">PCD*:</label>
-                    <select name="pcd" id="pcd">
-                      <option> Escolha uma opção</option>
-                      <option value="sim"> Sim </option>
-                      <option value="nao"> Não </option>
-                    </select>
-                  </div>
-                  <hr>
-                  <div>
-                    <h4>Anexos</h4>
-                    <label>Arquivo de Identidade(RG)*:</label>
-                    <input required="required" name="rg_url" id="rg" type='file' accept='image/*' id='file-input' />
-                    <label>Arquivo de CPF*:</label>
-                    <input required="required" name="cpf_url" type='file' accept='image/*' id='file-input' />
-                    <label>Arquivo de Currículo*:</label>
-                    <input required="required" name="curriculo_url" type='file' accept='image/*' id='file-input' />
-                    <label>Arquivo de CNH:</label>
-                    <input type='file' name="cnh_url" accept='image/*' id='file-input' />
-                    <label>Arquivo de Certificado de Reservista:</label>
-                    <input type='file' name="reservista_url" accept='image/*' id='file-input' />
-                  </div>
-                  <div>
-                    <h5>POSSUI ALGUM PARENTE OU AMIGO QUE TRABALHA NA ALFA?</h5>
-                    <input type="button" id="btn_check" value="Sim">
-                    <input type="button" id="btn_nao" value="Não">
-                    <div class="tela_parentes">
-                    </div>
-                  </div>
-                  <hr>
-                  <div>
-                    <h5>Dependentes:</h5>
-                    <input type="button" id="btn_dependentes" value="Adicionar Dependentes">
-                    <div class="tela_dependentes">
-                    </div>
-                  </div>
-                  <div>
-                    <button type="submit" id="submit" class="btn_box">Enviar</button>
-                  </div>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="func">PCD*:</label>
+                        <select name="pcd" id="pcd">
+                          <option> Escolha uma opção</option>
+                          <option value="sim"> Sim </option>
+                          <option value="nao"> Não </option>
+                        </select>
+                      </div>
+                      <hr>
+                      <div>
+                        <h4>Anexos</h4>
+                        <label>Arquivo de Identidade(RG)*:</label>
+                        <input required="required" name="rg_url" id="rg" type='file' accept='image/*' id='file-input' />
+                        <label>Arquivo de CPF*:</label>
+                        <input required="required" name="cpf_url" type='file' accept='image/*' id='file-input' />
+                        <label>Arquivo de Currículo*:</label>
+                        <input required="required" name="curriculo_url" type='file' accept='image/*' id='file-input' />
+                        <label>Arquivo de CNH:</label>
+                        <input type='file' name="cnh_url" accept='image/*' id='file-input' />
+                        <label>Arquivo de Certificado de Reservista:</label>
+                        <input type='file' name="reservista_url" accept='image/*' id='file-input' />
+                      </div>
+                      <div>
+                        <h5>POSSUI ALGUM PARENTE OU AMIGO QUE TRABALHA NA ALFA?</h5>
+                        <input type="button" id="btn_check" value="Sim">
+                        <input type="button" id="btn_nao" value="Não">
+                        <div class="tela_parentes">
+                        </div>
+                      </div>
+                      <hr>
+                      <div>
+                        <h5>Dependentes:</h5>
+                        <input type="button" id="btn_dependentes" value="Adicionar Dependentes">
+                        <div class="tela_dependentes">
+                        </div>
+                      </div>
+                      <div>
+                        <button type="submit" id="submit" class="btn_box">Enviar</button>
+                      </div>
               </form>
             </div>
           </div>
-
         </div>
       </div>
+
+    </div>
   </section>
   <!-- end contact section -->
 
@@ -445,9 +455,9 @@
   </footer>
   <!-- footer section -->
 
-  
-    
-  
+
+
+
 
   <!--script-->
   <script src="../public/js/candidatos.js"></script>
