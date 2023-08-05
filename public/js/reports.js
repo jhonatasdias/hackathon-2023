@@ -5,13 +5,13 @@ document.getElementById("btn_anonimo").onclick = function () {
     let texto = "";
     texto += `
     <div>
-                    <input type="text" placeholder="Informe o Centro de Custo" required="required" />
+                    <input type="text" name="centro" placeholder="Informe o Centro de Custo" required="required" />
                   </div>
                   <div>
-                    <input type="text" placeholder="Referência da Área de atuação" required="required" />
+                    <input type="text" name="area" placeholder="Referência da Área de atuação" required="required" />
                   </div>
                   <div>
-                    <textarea id="msg" name="msg" rows="4" placeholder="Descreva o acontecimento" cols="50"
+                    <textarea id="msg" name="descricao" rows="4" placeholder="Descreva o acontecimento" cols="50"
                       required="required"></textarea>
                   </div>
                   <div>
@@ -22,9 +22,9 @@ document.getElementById("btn_anonimo").onclick = function () {
                   <br>
                   <div>
                     <label for="anexos">Anexe imagens do report</label>
-                    <input required="required" type='file' accept='image/*' id='file-input' />
-                    <input required="required" type='file' accept='image/*' id='file-input' />
-                    <input required="required" type='file' accept='image/*' id='file-input' />
+                    <input required="required" name="url_img1" type='file' accept='image/*' id='file-input' />
+                    <input required="required" name="url_img2" type='file' accept='image/*' id='file-input' />
+                    <input required="required" name="url_img3" type='file' accept='image/*' id='file-input' />
                   </div>
                   <div class="btn_box">
                     <button>
