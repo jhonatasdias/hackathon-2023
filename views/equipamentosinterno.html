@@ -90,116 +90,84 @@
             <div class="container ">
                 <div class="heading_container">
                     <h2>
-                        Serviços
+                        Cadastro da Área e/ou Equipamento de trabalho
                     </h2>
-                    <p>
-                        Serviços disponibilizados em nosso site interno
-                    </p>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="box ">
-                            <div class="img-box">
-                                <img src="../public/images/s1.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h5>
-                                    Candidatos
-                                </h5>
-                                <p>
-                                    Visualização de candidatos cadastrados
-                                </p>
+                <form action="/equipinternos" method="post">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="box ">
+                                <div class="img-box">
+                                    <img src="../public/images/s4.png" alt="">
+                                </div>
+                                <div class="detail-box">
+                                    <label> Insira o Código: </label>
+                                    <input type="number">
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="box ">
-                            <div class="img-box">
-                                <img src="../public/images/s3.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h5>
-                                    Reports
-                                </h5>
-                                <p>
-                                    Consulta dos reports
-                                </p>
+                        <th></th>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="box ">
+                                <div class="img-box">
+                                    <img src="../public/images/s2.png" alt="">
+                                </div>
+                                <div class="detail-box">
+                                    <label> Descrição: </label>
+                                    <textarea id="msg" name="msg" rows="4"
+                                        placeholder="Descreva da área e/ou equipamentos" cols="25"
+                                        required="required"></textarea>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3">
-                        <div class="box ">
-                            <div class="img-box">
-                                <img src="../public/images/s4.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h5>
-                                    Solicitação Alfa
-                                </h5>
-                                <p>
-                                    Área para candidatos admitidos
-                                </p>
 
+                        <div class="col-md-6 col-lg-3">
+                            <div class="box ">
+                                <div class="img-box">
+                                    <img src="../public/images/s1.png" alt="">
+                                </div>
+                                <div class="detail-box">
+                                    <label>
+                                        Status da Liberação
+                                    </label>
+                                    <div>
+                                        <input type="checkbox" id="sim" name="sim" checked />
+                                        <label for="scales">Sim</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="nao" name="nao" checked />
+                                        <label for="nao">Não</label>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="box ">
-                            <div class="img-box">
-                                <img src="../public/images/s2.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h5>
-                                    Equipamentos
-                                </h5>
-                                <p>
-                                    Anexar dados sobre equipamentos
-                                </p>
-
+                        <div class="col-md-6 col-lg-3">
+                            <div class="box ">
+                                <div class="img-box">
+                                    <img src="../public/images/s3.png" alt="">
+                                </div>
+                                <div class="detail-box">
+                                    <label>Anexo PDF</label>
+                                    <input id="file_equip" type='file' required accept="application/pdf">
+                                </div>
                             </div>
                         </div>
+
+                        <div>
+                            <button type="submit" class="btn-primary">Enviar</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
+
     </section>
 
     <!-- end service section -->
-<!-- about section -->
 
-<section class="about_section">
-    <div class="container  ">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-               Sobre nós
-              </h2>
-            </div>
-            <p>
-              Estudantes de Engenharia de Software - 2 período <br>
-              Pedro Henrique: Front-end <br>
-              Jhonata Silveira: Back-end <br>
-              Guilherme: Testes e Design <br>
-            </p>
-            
-          </div>
-        </div>
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="../public/images/about-img.jpg" alt="">
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- end about section -->
 
     <!-- footer section -->
     <footer class="footer_section">
@@ -212,9 +180,14 @@
     </footer>
     <!-- footer section -->
 
+    <!--Comprimir PDF -->
+    <script type="text/javascript" src="../jszip.min.js"></script>
+    <script type="text/javascript" src="../jszip-utils.js"></script>
+    <script type="text/javascript"></script>
+
 
     <!--script-->
-    <script src="../public/js/login.js"></script>
+    <script src="../public/js/equipinternos.js"></script>
     <!-- jQery -->
     <script src="../public/js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
