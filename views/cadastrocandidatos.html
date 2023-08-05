@@ -211,19 +211,19 @@
 
               <div>
                 <label>Nome completo do Candidato*:</label>
-                <input type="text" placeholder="Digite seu nome" />
+                <input type="text" required="required" placeholder="Digite seu nome" />
               </div>
               <div>
                 <label>Nome completo da Mãe*:</label>
-                <input type="text" placeholder="Digite nome da mãe" />
+                <input type="text" required="required" placeholder="Digite nome da mãe" />
               </div>
               <div>
                 <label>Nome completo do Pai*:</label>
-                <input type="text" placeholder="Digite o nome do pai" />
+                <input type="text" required="required" placeholder="Digite o nome do pai" />
               </div>
               <div>
                 <label>Sexo*:</label>
-                <select name="sexo" id="sexo">
+                <select name="sexo" required="required" id="sexo">
                   <option>Escolher...</option>
                   <option>Masculino</option>
                   <option>Feminino</option>
@@ -231,7 +231,7 @@
               </div>
               <div>
                 <label>Estado Civil*:</label>
-                <select name="estado_civil" id="estado_civil">
+                <select name="estado_civil" required="required" id="estado_civil">
                   <option value="">Escolher...</option>
                   <option value="Solteiro">Solteiro</option>
                   <option value="Casado">Casado</option>
@@ -243,7 +243,7 @@
               </div>
               <div>
                 <label>Grau de Instrução*:</label>
-                <select name="escolaridade" id="escolaridade">
+                <select name="escolaridade" required="required" id="escolaridade">
                   <option>Escolher...</option>
                   <option value="Ensino Fundamental">Ensino Fundamental</option>
                   <option value="Ensino Medio">Ensino Medio</option>
@@ -255,7 +255,7 @@
               </div>
               <div>
                 <label>Raça/Cor*:</label>
-                <select name="raça" id="raça">
+                <select name="raça" required="required" id="raça">
                   <option>Escolher...</option>
                   <option>Branco</option>
                   <option>Pardo</option>
@@ -268,53 +268,53 @@
               <h4>Dados de Nascimento</h4>
               <div>
                 <label>Data de Nascimento*:</label>
-                <input type="number" placeholder="PEDIR AJUDA" required="required" />
+                <input id="date" required="required" type="date">
               </div>
               <div> <label>Nacionalidade*:</label>
-                <select id="nacionalidade">
+                <select required="required" id="nacionalidade">
                   <option value=""></option>
                 </select>
               </div>
               <div>
                 <label>País de Nascimento*:</label>
-                <select id="pais_nascimento">
+                <select required="required" id="pais_nascimento">
                   <option value=""></option>
               </div>
               <div>
                 <label>Estado de Nascimento:</label>
-                <input type="text" placeholder="Ex: MG, SP">
+                <input required="required" type="text" placeholder="Ex: MG, SP">
               </div>
               <div>
                 <label>Cidade de Nascimento:</label>
-                <input type="text" placeholder="Ex: MG, SP">
+                <input required="required" type="text" placeholder="Ex: MG, SP">
               </div>
               <hr>
               <h4>Tamanhos</h4>
               <div>
                 <label>Número de Botina*:</label>
-                <input type="number" placeholder="Ex:42">
+                <input required="required" type="number" placeholder="Ex:42">
               </div>
               <div>
                 <label>Número da Calça*:</label>
-                <input type="number" placeholder="Ex:38">
+                <input required="required" type="number" placeholder="Ex:38">
               </div>
               <div>
                 <label>Tamanho de Camisa*:</label>
-                <input type="number" placeholder="Ex:G">
+                <input required="required" type="number" placeholder="Ex:G">
               </div>
               <hr>
               <h4>Contato</h4>
               <div>
                 <label>DDD | Telefone*: </label>
-                <input type="number" placeholder="Ex:(11) 99999-9999">
+                <input required="required" type="number" placeholder="Ex:(11) 99999-9999">
               </div>
               <div>
                 <label>DDD | Telefone2*: </label>
-                <input type="number" placeholder="Ex:(11) 99999-9999">
+                <input required="required" type="number" placeholder="Ex:(11) 99999-9999">
               </div>
               <div>
                 <label>Email: </label>
-                <input type="email" placeholder="Digite seu email">
+                <input required="required" type="email" placeholder="Digite seu email">
               </div>
               <hr>
               <h4>Endereço:</h4>
@@ -322,22 +322,22 @@
 
 
                 <div>
-                  <label>CEP: <input type="text" id="txtCep"></label>
-                  <label>Cidade: <input type="text" id="txtCidade"></label>
-                  <label>Estado: <input type="text" id="txtEstado"></label>
-                  <label>Bairro: <input type="text" id="txtBairro"></label>
-                  <label>Rua: <input type="text" id="txtRua"></label>
+                  <label>CEP: <input required="required" type="text" id="txtCep"></label>
+                  <label>Cidade: <input required="required" type="text" id="txtCidade"></label>
+                  <label>Estado: <input required="required" type="text" id="txtEstado"></label>
+                  <label>Bairro: <input required="required" type="text" id="txtBairro"></label>
+                  <label>Rua: <input required="required" type="text" id="txtRua"></label>
                   <label>Complemento: <input type="text" id="txtComplemento"></label>
                 </div>
                 <hr>
                 <h4>Carteira de Identidade, CPF e PIS</h4>
                 <div>
                   <label for="cpf">Número da Carteira de Identidade (RG)*:</label>
-                  <input type="number" placeholder="Ex: 99999999999" />
+                  <input required="required" type="number" placeholder="Ex: 99999999999" />
                 </div>
                 <div>
                   <label for="org">Orgão Emisor da Carteira de Identidade:</label>
-                  <input type="text" placeholder="Ex: (SSP, SJC, SJT)" />
+                  <input required="required" type="text" placeholder="Ex: (SSP, SJC, SJT)" />
                 </div>
                 <div>
                   <label for="est">Estado do Orgão Emissor(RG)*:</label>
@@ -349,21 +349,21 @@
                 </div>
                 <div>
                   <label for="DT">Data de Expedição da Identidade:</label>
-                  <input type="number" placeholder="PEDIR AJUDA" />
+                  <input required="required" id="date" type="date">
                 </div>
                 <div>
                   <label for="cpf">Número do CPF*:</label>
-                  <input type="number" placeholder="Ex: 99999999999" />
+                  <input required="required" type="number" placeholder="Ex: 99999999999" />
                 </div>
                 <div>
                   <label for="cpf">Número do PIS/PASEP*:</label>
-                  <input type="number" placeholder="Ex: 99999999999" />
+                  <input required="required" type="number" placeholder="Ex: 99999999999" />
                 </div>
                 <hr>
                 <h4>Outros</h4>
                 <div>
                   <label for="func">Função*:</label>
-                  <input type="text" placeholder="Ex: Administrador Contratual" />
+                  <input required="required" type="text" placeholder="Ex: Administrador Contratual" />
                 </div>
                 <div>
                   <label for="func">Alojado*:</label>
@@ -384,25 +384,35 @@
                 <div>
                   <h4>Anexos</h4>
                   <label>Arquivo de Identidade(RG)*:</label>
-                  <input type='file' accept='image/*' id='file-input' />
+                  <input required="required" type='file' accept='image/*' id='file-input' />
                   <label>Arquivo de CPF*:</label>
-                  <input type='file' accept='image/*' id='file-input' />
+                  <input required="required" type='file' accept='image/*' id='file-input' />
                   <label>Arquivo de Currículo*:</label>
-                  <input type='file' accept='image/*' id='file-input' />
+                  <input required="required" type='file' accept='image/*' id='file-input' />
                   <label>Arquivo de CNH:</label>
                   <input type='file' accept='image/*' id='file-input' />
                   <label>Arquivo de Certificado de Reservista:</label>
                   <input type='file' accept='image/*' id='file-input' />
                 </div>
-                <label>POSSUI ALGUM PARENTE OU AMIGO QUE TRABALHA NA ALFA?</label>
-                 <input type="checkbox" id="myCheckbox" value="sim"> Sim
-                 <input type="checkbox" value="nao"> Não
-                 <div>
-                  <label>Dependentes</label> <button>+</button>
-                 </div>
                 <div>
-                  <button type="submit">Enviar</button>
-                </div>
+                  <h5>POSSUI ALGUM PARENTE OU AMIGO QUE TRABALHA NA ALFA?</h5>
+                  <input required="required" type="button" id="btn_check" value="Sim">
+                  <input type="button" value="Não">
+                  <div class="tela_parentes">
+                  </div>
+                 </div>
+                 <hr>
+                  <div>
+                    <h5>Dependentes:</h5> 
+                    <input type="button" id="btn_dependentes"
+                      value="Adicionar dependetes"></input>
+                    <div class="tela_dependentes">
+
+                    </div>
+                  </div>
+                  <div>
+                    <button type="submit">Enviar</button>
+                  </div>
             </form>
           </div>
         </div>
@@ -426,7 +436,7 @@
   <!-- footer section -->
 
   <!--script-->
-  <script src="../public/js/script.js"></script>
+  <script src="../public/js/candidatos.js"></script>
   <!-- jQery -->
   <script src="../public/js/jquery-3.4.1.min.js"></script>
   <script src="../public/js/jquery-3.3.1.min.js"></script>
