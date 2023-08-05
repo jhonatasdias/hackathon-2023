@@ -1,3 +1,5 @@
+// se usuario selecionou anonimo:
+
 let tela_reportes = document.querySelector(".tela_reports");
 document.getElementById("btn_anonimo").onclick = function () {
     let texto = "";
@@ -33,6 +35,8 @@ document.getElementById("btn_anonimo").onclick = function () {
     `
     tela_reportes.innerHTML = texto;
 }
+
+//se usuario optou em nao ser anonimo
 
 let tela_reportes2 = document.querySelector(".tela_reports");
 document.getElementById("btn_naoanonimo").onclick = function () {

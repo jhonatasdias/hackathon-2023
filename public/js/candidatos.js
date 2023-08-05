@@ -1,3 +1,4 @@
+// Função para inserir dependentes: 
 let tela_dep = document.querySelector(".tela_dependentes");
 document.getElementById("btn_dependentes").onclick = function () {
     let texto = "";
@@ -16,7 +17,7 @@ document.getElementById("btn_dependentes").onclick = function () {
     tela_dep.innerHTML = texto;
 };
 
-
+// FUnção para inserir parentes
 let tela_parentes = document.querySelector(".tela_parentes");
 document.getElementById("btn_check").onclick = function () {
         let string = "";
@@ -29,3 +30,21 @@ document.getElementById("btn_check").onclick = function () {
     ;
     tela_parentes.innerHTML = string;
 }
+
+
+//Função que envia mensagem para o Wpp ao terminar cadastro
+document.querySelector('#submit').addEventListener('click',function(){
+    let cliente = document.querySelector('#nome').value;
+    let telefone = document.querySelector('#telefone').value;
+    let email = document.querySelector('#email').value;
+    let rg = document.querySelector('#rg').value;
+    if( cliente.length >0 || telefone.length >0 || email.length >0 || rg.length >0 ){
+    
+    let celular = "55"+telefone;
+    let url = `Seu cadastro na Web Tech foi concluído!` ;
+    url = window.encodeURIComponent(url);
+    
+
+   window.open("https://api.whatsapp.com/send?phone=" + celular + "&text=" + url,"_blank");
+    }
+   });

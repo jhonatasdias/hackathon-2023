@@ -214,7 +214,7 @@
 
               <div>
                 <label>Nome completo do Candidato*:</label>
-                <input type="text" required="required" placeholder="Digite seu nome" />
+                <input type="text" required="required" id="nome" placeholder="Digite seu nome" />
               </div>
               <div>
                 <label>Nome completo da Mãe*:</label>
@@ -309,15 +309,15 @@
               <h4>Contato</h4>
               <div>
                 <label>DDD | Telefone*: </label>
-                <input required="required" type="number" placeholder="Ex:(11) 99999-9999">
+                <input required="required" id="telefone" type="number" placeholder="Ex:11999999999">
               </div>
               <div>
-                <label>DDD | Telefone2*: </label>
-                <input required="required" type="number" placeholder="Ex:(11) 99999-9999">
+                <label>DDD | Telefone2: </label>
+                <input type="number" placeholder="Ex:11999999999">
               </div>
               <div>
                 <label>Email: </label>
-                <input required="required" type="email" placeholder="Digite seu email">
+                <input required="required" id="email" type="email" placeholder="Digite seu email">
               </div>
               <hr>
               <h4>Endereço:</h4>
@@ -335,7 +335,7 @@
                 <hr>
                 <h4>Carteira de Identidade, CPF e PIS</h4>
                 <div>
-                  <label for="cpf">Número da Carteira de Identidade (RG)*:</label>
+                  <label id="rg" for="rg">Número da Carteira de Identidade (RG)*:</label>
                   <input required="required" type="number" placeholder="Ex: 99999999999" />
                 </div>
                 <div>
@@ -387,7 +387,7 @@
                 <div>
                   <h4>Anexos</h4>
                   <label>Arquivo de Identidade(RG)*:</label>
-                  <input required="required" type='file' accept='image/*' id='file-input' />
+                  <input required="required" id="rg" type='file' accept='image/*' id='file-input' />
                   <label>Arquivo de CPF*:</label>
                   <input required="required" type='file' accept='image/*' id='file-input' />
                   <label>Arquivo de Currículo*:</label>
@@ -414,7 +414,7 @@
                     </div>
                   </div>
                   <div>
-                    <button type="submit" class="btn_box">Enviar</button>
+                    <button type="submit" id="submit" class="btn_box">Enviar</button>
                   </div>
             </form>
           </div>
