@@ -7,17 +7,9 @@ let telaParentes = document.querySelector('.tela_parentes');
 function alternarBotoes() {
   if (botaoSim.disabled) {
     botaoSim.disabled = false;
-    botaoSim.style.backgroundColor = "initial";
-    botaoSim.style.color = "initial";
-    botaoNao.style.backgroundColor = "blue";
-    botaoNao.style.color = "white";
     telaParentes.style.display = "none"; // Exibe a div de parentes
   } else {
     botaoSim.disabled = true;
-    botaoSim.style.backgroundColor = "blue";
-    botaoSim.style.color = "white";
-    botaoNao.style.backgroundColor = "initial";
-    botaoNao.style.color = "initial";
     telaParentes.style.display = "block"; // Esconde a div de parentes
   }
 }
@@ -85,7 +77,7 @@ document.getElementById("btn_dependentes").onclick = function () {
   telaDependentes.innerHTML = texto;
 };
 
-// FUnção para inserir parentes
+// Função para inserir parentes
 document.getElementById("btn_check").onclick = function () {
   let string = "";
   if (botaoSim.disabled) {
