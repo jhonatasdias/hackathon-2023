@@ -14,18 +14,18 @@ class Dados {
 		return connection;
     }
 
-    static save(carro, callback) {
+    static save(formulario, callback) {
 
 		let connection = Dados.connect()
 
-		// Insere o carro
+		// Inserir formulario
 		let sql = "insert into formulario set ? ";
-		let query = connection.query(sql, carro, function (error, results, fields) {
+		let query = connection.query(sql, formulario, function (error, results, fields) {
 			if (error) throw error;
-			// Atualiza o objeto carro do parametro com o "id" inserido
-			carro.id = results.insertId;
+			// Atualiza o objeto formulario do parametro com o "id" inserido
+			formulario.id = results.insertId;
 			// Retorna o carro pela função de callback
-			callback(carro)
+			callback(formulario)
 		});
 		console.log(query.sql)
 		// Fecha a conexão.
