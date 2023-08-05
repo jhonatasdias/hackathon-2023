@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Fonicy</title>
+  <title>WebTech</title>
 
 
  <!-- bootstrap core css -->
@@ -26,10 +26,52 @@
  <link href="../public/css/style.css" rel="stylesheet" />
  <!-- responsive style -->
  <link href="../public/css/responsive.css" rel="stylesheet" />
+<!-- Função para pegar as -->
+  <script type="text/javascript" src="../public/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">	
+		
+		$(document).ready(function () {
+		
+			$.getJSON('../data/cidades.json', function (data) {
 
+				var items = [];
+				var options = '<option value="">escolha um estado</option>';	
+
+				$.each(data, function (key, val) {
+					options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+				});					
+				$("#estados").html(options);				
+				
+				$("#estados").change(function () {				
+				
+					var options_cidades = '';
+					var str = "";					
+					
+					$("#estados option:selected").each(function () {
+						str += $(this).text();
+					});
+					
+					$.each(data, function (key, val) {
+						if(val.nome == str) {							
+							$.each(val.cidades, function (key_city, val_city) {
+								options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+							});							
+						}
+					});
+
+					$("#cidades").html(options_cidades);
+					
+				}).change();		
+			
+			});
+		
+		});
+		
+	</script>		
 </head>
 
 <body class="sub_page">
+
 
   <div class="hero_area">
     <!-- header section strats -->
@@ -90,152 +132,47 @@
           <div class="form_container">
             <form action="">
               <div>
-                <input type="text" placeholder="Your Name" />
+                <input type="text" placeholder="Digite seu nome" />
               </div>
               <div>
-                <input type="text" placeholder="Phone Number" />
+                <input type="text" placeholder="Digite seu telefone" />
               </div>
               <div>
                 <input type="email" placeholder="Email" />
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Message" />
+                <label for="cpf">Digite seu CPF:</label>
+                <input type="number" placeholder="Ex: 99999999999" />
+                
               </div>
+              <div>
+                <label for="org">Orgão Emisor da Carteira de Identidade:</label>
+                <input type="text" placeholder="Ex: Polícia" />
+              </div>
+              <div>
+                <label for="est">Estado do Orgão Emissor(RG)*:</label>
+                <select id="estados">
+                  <option value=""></option>
+                </select>
+                <select id="cidades">
+                </select>
+              </div>
+
+              
               <div class="btn_box">
                 <button>
-                  SEND
+                  Enviar
                 </button>
               </div>
             </form>
           </div>
         </div>
-        <div class="col-lg-7 col-md-6 px-0">
-          <div class="map_container">
-            <div class="map">
-              <div id="googleMap"></div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </section>
   <!-- end contact section -->
 
-  <!-- info section -->
-  <section class="info_section ">
-
-    <div class="container">
-      <div class="contact_nav">
-        <a href="">
-          <i class="fa fa-phone" aria-hidden="true"></i>
-          <span>
-            Call : +01 123455678990
-          </span>
-        </a>
-        <a href="">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-          <span>
-            Email : demo@gmail.com
-          </span>
-        </a>
-        <a href="">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          <span>
-            Location
-          </span>
-        </a>
-      </div>
-
-      <div class="info_top ">
-        <div class="row info_main_row">
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="info_links">
-              <h4>
-                QUICK LINKS
-              </h4>
-              <div class="info_links_menu">
-                <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-                <a class="" href="service.html">Services</a>
-                <a class="" href="about.html"> About</a>
-                <a class="" href="project.html">Project</a>
-                <a class="" href="testimonial.html">Testimonial</a>
-                <a class="" href="contact.html">Contact Us</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 mx-auto">
-            <div class="info_post">
-              <h5>
-                INSTAGRAM FEEDS
-              </h5>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/instagram.jpg" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="info_form">
-              <h4>
-                SIGN UP TO OUR NEWSLETTER
-              </h4>
-              <form action="">
-                <input type="text" placeholder="Enter Your Email" />
-                <button type="submit">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="info_bottom">
-        <div class="row">
-          <div class="col-md-2">
-            <div class="info_logo">
-              <a href="">
-                <h3>WebTech</h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4 ml-auto">
-            <div class="social_box">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- end info_section -->
 
 
   <!-- footer section -->
@@ -250,19 +187,19 @@
   <!-- footer section -->
 
   <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="../public/js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
+  <script src="../public/js/bootstrap.js"></script>
   <!-- owl slider -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
   <!--  OwlCarousel 2 - Filter -->
   <script src="https://huynhhuynh.github.io/owlcarousel2-filter/dist/owlcarousel2-filter.min.js"></script>
   <!-- custom js -->
-  <script src="js/custom.js"></script>
+  <script src="../public/js/custom.js"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
