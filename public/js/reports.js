@@ -22,9 +22,9 @@ document.getElementById("btn_anonimo").onclick = function () {
                   <br>
                   <div>
                     <label for="anexos">Anexe imagens do report</label>
-                    <input required="required" name="url_img1" type='file' accept='image/*' id='file-input' />
-                    <input required="required" name="url_img2" type='file' accept='image/*' id='file-input' />
-                    <input required="required" name="url_img3" type='file' accept='image/*' id='file-input' />
+                    <input required="required" name="image1_url" type='file' accept='application/pdf|image/*' id='file-input' />
+                    <input required="required" name="image2_url" type='file' accept='application/pdf|image/*' id='file-input' />
+                    <input required="required" name="image3_url" type='file' accept='application/pdf|image/*' id='file-input' />
                   </div>
                   <div class="btn_box">
                     <button>
@@ -65,9 +65,9 @@ document.getElementById("btn_naoanonimo").onclick = function () {
                   <br>
                   <div>
                     <label for="anexos">Anexe imagens do report</label>
-                    <input required="required" name="url_img1" type='file' accept='application/pdf|image/*' id='file-input' />
-                    <input required="required" name="url_img2" type='file' accept='application/pdf|image/*' id='file-input' />
-                    <input required="required" name="url_img3" type='file' accept='application/pdf|image/*' id='file-input' />
+                    <input required="required" name="image1_url" type='file' accept='application/pdf|image/*' id='file-input' />
+                    <input required="required" name="image2_url" type='file' accept='application/pdf|image/*' id='file-input' />
+                    <input required="required" name="image3_url" type='file' accept='application/pdf|image/*' id='file-input' />
                   </div>
                   <div type="submit" id="submit" class="btn_box">
                     <button>
@@ -80,7 +80,7 @@ document.getElementById("btn_naoanonimo").onclick = function () {
     tela_reportes2.innerHTML = string;
 }
 
-    
+
 
 
 
