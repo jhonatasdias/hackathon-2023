@@ -7,7 +7,7 @@ class Dados {
             host: 'localhost',
             user: 'teste',
             password: '1234',
-            database: 'talently',
+            database: 'hackathon',
             port: 3306
         })
         // Conecta no banco de dados	
@@ -20,7 +20,7 @@ class Dados {
 		let connection = Dados.connect()
 
 		// Inserir formulario
-		let sql = "insert into formulario set ? ";
+		let sql = "insert into candidatos set ? ";
 		let query = connection.query(sql, formulario, function (error, results, fields) {
 			if (error) throw error;
 			// Atualiza o objeto formulario do parametro com o "id" inserido
@@ -121,11 +121,11 @@ class Formulario {
         funcoes_id,
         alojado,
         pcd,
-        rg_url,
-        cpf_url,
-        curriculo_url,
-        cnh_url,
-        reservista_url,
+        anexo_rg_url,
+        anexo_cpf_url,
+        anexo_curriculo_url,
+        anexo_cnh_url,
+        anexo_reservista_url,
         parente_nome,
         parente_cargo,
         parente_cidade,
@@ -168,11 +168,11 @@ class Formulario {
             this.funcoes_id = funcoes_id;
             this.alojado = alojado;
             this.pcd = pcd;
-            this.rg_url = rg_url;
-            this.cpf_url = cpf_url;
-            this.curriculo_url = curriculo_url;
-            this.cnh_url = cnh_url;
-            this.reservista_url = reservista_url;
+            this.anexo_rg_url = anexo_rg_url;
+            this.anexo_cpf_url = anexo_cpf_url;
+            this.anexo_curriculo_url = anexo_curriculo_url;
+            this.anexo_cnh_url = anexo_cnh_url;
+            this.anexo_reservista_url = anexo_reservista_url;
             this.parente_nome = parente_nome;
             this.parente_cargo = parente_cargo;
             this.parente_cidade = parente_cidade;

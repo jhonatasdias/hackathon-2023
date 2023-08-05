@@ -37,11 +37,11 @@ exports.postAddFormulario = (req, res, next) => {
      const funcoesId = req.body.funcoes_id;
      const alojado = req.body.alojado;
      const pcd = req.body.pcd;
-     const rgUrl = req.body.rg_url;
-     const cpfUrl = req.body.cpf_url;
-     const curriculoUrl = req.body.curriculo_url;
-     const cnhUrl = req.body.cnh_url;
-     const reservistaUrl = req.body.reservista_url;
+     const rgUrl = '';
+     const cpfUrl = '';
+     const curriculoUrl = '';
+     const cnhUrl = '';
+     const reservistaUrl = '';
      const parenteNome = req.body.parente_nome;
      const parenteCargo = req.body.parente_cargo;
      const parenteCidade = req.body.parente_cidade;
@@ -105,10 +105,10 @@ exports.postAddFormulario = (req, res, next) => {
     // Metodo save
     Dados.save(formulario, function (salvoFor) {
         console.log('Formulário salvo: ', salvoFor);
-        res.redirect('/');
     });
+    res.redirect('/');
 }
-
+/* 
 exports.postCadastroLogin = (req, res, next) => {
     
-}
+} */
