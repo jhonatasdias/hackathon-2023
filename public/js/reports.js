@@ -25,9 +25,9 @@ document.getElementById("btn_anonimo").onclick = function () {
                   <br>
                   <div>
                     <label for="anexos">Anexe imagens do report</label>
-                    <input required="required" name="image1_url" type='file' accept='application/pdf|image/*' id='file-input' />
-                    <input required="required" name="image2_url" type='file' accept='application/pdf|image/*' id='file-input' />
-                    <input required="required" name="image3_url" type='file' accept='application/pdf|image/*' id='file-input' />
+                    <input name="image1_url" type='file' accept='application/pdf|image/*' id='file-input' />
+                    <input name="image2_url" type='file' accept='application/pdf|image/*' id='file-input' />
+                    <input name="image3_url" type='file' accept='application/pdf|image/*' id='file-input' />
                   </div>
                   <div class="btn_box">
                     <button>

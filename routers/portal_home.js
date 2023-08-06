@@ -27,7 +27,7 @@ router.get('/cadastroreports', (req, res, next) => {
 })
 
 // /reports => POST
-/* router.post('/reports', portalInternoController.); */
+router.post('/reports', portalInternoController.postAddReports);
 
 // / => GET
 router.get('/equipamentos', (req, res, next) => {

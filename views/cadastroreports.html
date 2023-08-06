@@ -85,10 +85,8 @@
 
     // COORDENADAS DA LATITUDE
   function enviarCoordenadasParaServidor(lat, lon) {
-  var endpoint = "/enviar_coordenadas"; // URL do endpoint no servidor
+  var endpoint = "/reports"; // URL do endpoint no servidor
   var data = { latitude: lat, longitude: lon };
-  
-  
 
   fetch(endpoint, {
     method: "POST",

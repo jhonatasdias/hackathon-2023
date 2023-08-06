@@ -25,7 +25,7 @@ class Dados {
 			if (error) throw error;
 			// Atualiza o objeto formulario do parametro com o "id" inserido
 			formulario.id = results.insertId;
-			// Retorna o carro pela função de callback
+			// Retorna pela função de callback
 			callback(formulario)
 		});
 		console.log(query.sql)

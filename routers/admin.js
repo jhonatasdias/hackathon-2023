@@ -4,6 +4,7 @@ const adminController = require('../controllers/admin');
 
 const router = express.Router();
 
+/*------- API -------- */
 // Configuracao da Rota geral
 // /admin/candidatos => GET
 router.get('/candidatos', adminController.getCandidatos);
