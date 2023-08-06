@@ -21,12 +21,14 @@ router.get('/reportsinterno', (req, res, next) => {
     console.log('Acessando reportsinterno.html');
 })
 
-// /interno/solicitacoes => GET
-router.get('/solicitacoes', (req, res, next) => {
-    res.sendFile(path.join(__dirname, '../views','solicitacoes.html'));
-    console.log('Acessando solicitacoes.html');
+// /interno/solicitacoesinterno => GET
+router.get('/solicitacoesinterno', (req, res, next) => {
+    res.sendFile(path.join(__dirname, '../views','solicitacoesinterno.html'));
+    console.log('Acessando solicitacoesinterno.html');
 })
 
-
+router.get('/equipamentosinterno', (req, res, next) => {
+    res.sendFile(path.join(__dirname, '../views', 'equipamentosinterno.html'))
+})
 
 module.exports = router;

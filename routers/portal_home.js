@@ -45,4 +45,9 @@ router.get('/login', (req, res, next) => {
 // /formulario => POST
 router.post('/formulario', portalHomeController.postAddFormulario);
 
+// Coordenadas
+/* router.get('/enviar_coordenadas', (req, res, next) => {
+    res.json(req.body.data);
+}) */
+
 module.exports = router;
