@@ -64,8 +64,14 @@
       lon = position.coords.longitude;
       latlon = new google.maps.LatLng(lat, lon)
       mapholder = document.getElementById('mapholder')
-      mapholder.style.height = '250px';
+      mapholder.style.height = '350px';
       mapholder.style.width = '500px';
+
+      
+      let loc_tela = document.getElementById("loc");
+      let texto = "Latitude: " + lat + " Longitude: " + lon;
+      loc_tela.innerHTML = texto;
+
 
       var myOptions = {
         center: latlon, zoom: 14,
@@ -77,10 +83,12 @@
       var marker = new google.maps.Marker({ position: latlon, map: map, title: "Você está Aqui!" });
     }
 
-    // COORDENADAS DA LATITUDE -> FAZER
-    function enviarCoordenadasParaServidor(lat, lon) {
+    // COORDENADAS DA LATITUDE
+  function enviarCoordenadasParaServidor(lat, lon) {
   var endpoint = "/enviar_coordenadas"; // URL do endpoint no servidor
   var data = { latitude: lat, longitude: lon };
+  
+  
 
   fetch(endpoint, {
     method: "POST",
