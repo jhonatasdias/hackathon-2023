@@ -1,3 +1,4 @@
+
 // se usuario selecionou anonimo:
 
 let tela_reportes = document.querySelector(".tela_reports");
@@ -17,6 +18,7 @@ document.getElementById("btn_anonimo").onclick = function () {
                   <div>
                     <p id="demo">Clique para informar a localização do Report:</p>
                     <button onclick="getLocation()">Emitir localização</button>
+                    <br>
                     <div id="mapholder"></div>
                   </div>
                   <br>
@@ -62,6 +64,7 @@ document.getElementById("btn_naoanonimo").onclick = function () {
                   <div>
                     <p id="demo">Clique para informar a localização do Report:</p>
                     <button onclick="getLocation()">Emitir Localização</button>
+                    <br>
                     <div id="mapholder">
                     </div>
                   </div>
@@ -142,7 +145,4 @@ function checkIfDocument(filename) {
   const fileExtension = filename.toLowerCase().substring(filename.lastIndexOf('.'));
   return documentExtensions.includes(fileExtension);
 }
-
-
-
 

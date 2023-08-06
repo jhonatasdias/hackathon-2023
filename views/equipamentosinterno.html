@@ -118,7 +118,7 @@
                         Cadastro da Área e/ou Equipamento de trabalho
                     </h2>
                 </div>
-                <form action="/interno/equipinternos" method="post">
+                <form action="/interno/equipinternos" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-6 col-lg-3">
                             <div class="box ">
@@ -164,12 +164,12 @@
                                         Status da Liberação
                                     </label>
                                     <div>
-                                        <input type="checkbox" id="sim" name="sim" />
-                                        <label for="scales">Sim</label>
+                                        <input type="checkbox" id="sim" name="liberado" value="sim" />
+                                        <label for="scales" id="checkbox_sim">Sim</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="nao" name="nao" />
-                                        <label for="nao">Não</label>
+                                        <input type="checkbox" id="nao" name="liberado" value="nao" />
+                                        <label for="scales" id="checkbox_nao">Não</label>
                                     </div>
 
                                 </div>
@@ -183,8 +183,9 @@
 
                                 </div>
                                 <div class="detail-box">
-                                    <label>Anexo PDF</label>
-                                    <input id="file_equip" type='file' required accept="application/pdf">
+                                    <label for="arquivo">Selecione um arquivo:</label>
+                                    <input type="file" name="arquivo" id="arquivo">
+                                    <br>
                                     <p id="verificationResult"></p>
                                 </div>
                             </div>
