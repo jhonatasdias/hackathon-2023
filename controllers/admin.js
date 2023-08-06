@@ -13,7 +13,7 @@ exports.getCandidatos = (req, res, next) => {
 exports.getIdCandidatos = (req, res, next) => {
     let id = req.params.id;
     Dados.getById(id, function(resultado){
-        res.json(resultado);
+        res.send(resultado.nome);
         console.log(resultado);
     })
 }

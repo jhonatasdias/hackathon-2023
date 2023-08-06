@@ -52,7 +52,7 @@ class Dados {
 	static getById(id, callback) {
 		let connection = Dados.connect()
 		// Cria uma consulta
-		let sql = "select * from formulario where id=?";
+		let sql = "select * from reports where id=?";
 		let query = connection.query(sql, id, function (error, results, fields) {
 			if (error) throw error;
 			if(results.length == 0) {

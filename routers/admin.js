@@ -13,6 +13,6 @@ router.get('/reports', adminController.getCandidatos);
 router.get('/reports/:id(\\d+)', adminController.getIdCandidatos);
 
 // /admin/cadidatos/status => (pesquisa por categoria, aprovados e não aprovados)
-/* router.get('/reports/:status', adminController.getStatusCandidatos); */
+router.get('/reports/:status', adminController.getStatusCandidatos);
 
 module.exports = router;
