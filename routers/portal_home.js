@@ -27,15 +27,15 @@ router.get('/cadastroreports', (req, res, next) => {
 })
 
 // /reports => POST
-router.post('/reports', portalInternoController.postAddReports);
+router.post('/reports', portalHomeController.postAddReports);
 
-// / => GET
+// /equipamentos => GET
 router.get('/equipamentos', (req, res, next) => {
     res.sendFile(path.join(__dirname, '../views','equipamentos.html'));
     console.log('Acessando equipamentos.html');
 })
 
-// / => GET
+// /login => GET
 router.get('/login', (req, res, next) => {
     res.sendFile(path.join(__dirname, '../views','login.html'));
     console.log('Acessando login.html');
@@ -44,10 +44,5 @@ router.get('/login', (req, res, next) => {
 // Cadastramento dos candidatos
 // /formulario => POST
 router.post('/formulario', portalHomeController.postAddFormulario);
-
-// Coordenadas
-/* router.get('/enviar_coordenadas', (req, res, next) => {
-    res.json(req.body.data);
-}) */
 
 module.exports = router;

@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 
+const portalInternoController = require('../controllers/portal_interno');
+
 const router = express.Router();
 
 // /interno/inicio => GET
@@ -27,8 +29,12 @@ router.get('/solicitacoesinterno', (req, res, next) => {
     console.log('Acessando solicitacoesinterno.html');
 })
 
+// /interno/equipamentosinterno => GET
 router.get('/equipamentosinterno', (req, res, next) => {
     res.sendFile(path.join(__dirname, '../views', 'equipamentosinterno.html'))
 })
+
+// /interno/equipinternos => POST
+router.post('/equipinternos', portalInternoController.postAddEquipamentos);
 
 module.exports = router;
