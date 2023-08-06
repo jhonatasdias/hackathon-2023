@@ -16,7 +16,7 @@ document.getElementById("btn_anonimo").onclick = function () {
                   </div>
                   <div>
                     <p id="demo">Clique para informar a localização do Report:</p>
-                    <button onclick="getLocation()">Clique aqui</button>
+                    <button onclick="getLocation()">Emitir localização</button>
                     <div id="mapholder"></div>
                   </div>
                   <br>
@@ -28,9 +28,9 @@ document.getElementById("btn_anonimo").onclick = function () {
                     <input  name="image1_url" type='file' accept='application/pdf|image/*' id='file_equip' />
                     <input  name="image2_url" type='file' accept='application/pdf|image/*' id='file_equip' />
                     <input  name="image3_url" type='file' accept='application/pdf|image/*' id='file_equip' />
-                    <p id="verificationResult"></p>
                   </div>
-                  <div class="btn_box">
+                  <p id="verificationResult"></p>
+                  <div type="submit" id="submit" class="btn_box">
                     <button>
                       Enviar
                     </button>
@@ -64,8 +64,6 @@ document.getElementById("btn_naoanonimo").onclick = function () {
                     <button onclick="getLocation()">Emitir Localização</button>
                     <div id="mapholder">
                     </div>
-                    
-          
                   </div>
                   <br>
                   <p>Coordenadas da Localização:</p><br>
@@ -76,8 +74,9 @@ document.getElementById("btn_naoanonimo").onclick = function () {
                     <input name="image1_url" type='file' accept='application/pdf|image/*' id='file_equip' />
                     <input name="image2_url" type='file' accept='application/pdf|image/*' id='file_equip' />
                     <input name="image3_url" type='file' accept='application/pdf|image/*' id='file_equip' />
-                    <p id="verificationResult"></p>
+                    
                     </div>
+                    <p id="verificationResult"></p>
                   <div type="submit" id="submit" class="btn_box">
                     <button>
                       Enviar
