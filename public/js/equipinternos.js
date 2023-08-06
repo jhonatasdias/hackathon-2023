@@ -1,7 +1,11 @@
 let input_pdf = document.getElementById("file_equip");
-let texto = input_pdf.value;
 
 function compromir_pdf () {
+    const file = input_pdf.files[0]; // Obter o primeiro arquivo selecionado (assumindo que seja apenas um)
+    if(!file) {
+        console.error("Nenhum arquivo selecionado.");
+        return;
+    }
     JSZipUtils.getBinaryContent("texto", function (err, data) {
         if (err) {
             throw err;
