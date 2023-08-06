@@ -84,5 +84,3 @@ function compromir_pdf () {
         });
     })
 }
-
-marca d'agua 
