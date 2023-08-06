@@ -2,8 +2,8 @@
 
 let tela_reportes = document.querySelector(".tela_reports");
 document.getElementById("btn_anonimo").onclick = function () {
-    let texto = "";
-    texto += `
+  let texto = "";
+  texto += `
     <div>
                     <input type="text" name="centro" placeholder="Informe o Centro de Custo" required="required" />
                   </div>
@@ -20,6 +20,9 @@ document.getElementById("btn_anonimo").onclick = function () {
                     <div id="mapholder"></div>
                   </div>
                   <br>
+                  <p>Coordenadas da Localização:</p>
+                    <div id="loc"></div>
+                  <br>
                   <div>
                     <label for="anexos">Anexe imagens do report</label>
                     <input required="required" name="image1_url" type='file' accept='application/pdf|image/*' id='file-input' />
@@ -33,15 +36,15 @@ document.getElementById("btn_anonimo").onclick = function () {
                   </div>
                   </div>
     `
-    tela_reportes.innerHTML = texto;
+  tela_reportes.innerHTML = texto;
 }
 
 //se usuario optou em nao ser anonimo
 
 let tela_reportes2 = document.querySelector(".tela_reports");
 document.getElementById("btn_naoanonimo").onclick = function () {
-    let string = "";
-    string += `
+  let string = "";
+  string += `
     <div>
                     <input type="text" name="nome" placeholder="Digite seu nome" required="required" />
                   </div>
@@ -61,7 +64,11 @@ document.getElementById("btn_naoanonimo").onclick = function () {
                     <div id="mapholder">
                     </div>
                     
+          
                   </div>
+                  <br>
+                  <p>Coordenadas da Localização:</p><br>
+                    <div id="loc"></div>
                   <br>
                   <div>
                     <label for="anexos">Anexe imagens do report</label>
@@ -75,9 +82,8 @@ document.getElementById("btn_naoanonimo").onclick = function () {
                     </button>
                   </div>
                   </div>
-    
     `
-    tela_reportes2.innerHTML = string;
+  tela_reportes2.innerHTML = string;
 }
 
 
