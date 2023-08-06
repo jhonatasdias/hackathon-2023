@@ -1,9 +1,14 @@
 const express = require('express');
 const path = require('path');
+const multer = require('multer');
+
+const { Dados } = require('../models/connect_db');
+
+// Configuração do multer para upload de arquivos
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 const portalHomeController = require('../controllers/portal_home');
-
-const portalInternoController = require('../controllers/portal_interno');
 
 const router = express.Router();
 
@@ -44,5 +49,33 @@ router.get('/login', (req, res, next) => {
 // Cadastramento dos candidatos
 // /formulario => POST
 router.post('/formulario', portalHomeController.postAddFormulario);
+
+/* Router para testes => GET */
+router.get('/teste', (req, res, next) => {
+    res.sendFile(path.join(__dirname, '../views', 'teste.html'));
+})
+
+db = Dados.connect();
+
+
+
+/* Router para testes => POST */
+router.post('/upload', upload.single('arquivo'), (req, res) => {
+    const arquivo = req.file;
+    const nomeArquivo = arquivo.originalname;
+    const tipoMIME = arquivo.mimetype;
+    const dadosArquivo = arquivo.buffer;
+
+    // Insira os dados no banco de dados
+    const query = 'INSERT INTO arquivos (nome_arquivo, tipo_mime, dados_arquivo) VALUES (?, ?, ?)';
+    db.query(query, [nomeArquivo, tipoMIME, dadosArquivo], (err, result) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Erro ao inserir arquivo no banco de dados.');
+        }
+        console.log(query);
+        res.status(200).send('Arquivo enviado com sucesso.');
+    });
+});
 
 module.exports = router;

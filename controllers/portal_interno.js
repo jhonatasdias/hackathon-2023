@@ -15,7 +15,7 @@ exports.postAddEquipamentos = (req, res, next) => {
     Reports.save(reports, function(salvoRep){
         console.log('Reports salvo:', salvoRep);
     }); */
-    res.redirect('/');
+    res.redirect('/interno/inicio');
 }
 
 // base64
