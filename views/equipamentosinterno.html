@@ -129,7 +129,7 @@
                                 </div>
                                 <div class="detail-box">
                                     <label> Insira o Código: </label>
-                                    <input type="number">
+                                    <input type="number" name="codigo">
 
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
                                 </div>
                                 <div class="detail-box">
                                     <label> Descrição: </label>
-                                    <textarea id="msg" name="msg" rows="4"
+                                    <textarea id="msg" name="descricao" rows="4"
                                         placeholder="Descreva da área e/ou equipamentos" cols="25"
                                         required="required"></textarea>
 
@@ -164,11 +164,11 @@
                                         Status da Liberação
                                     </label>
                                     <div>
-                                        <input type="checkbox" id="sim" name="sim" />
-                                        <label for="scales">Sim</label>
+                                        <input type="checkbox" id="sim" name="liberado" value="sim" />
+                                        <label for="scales" >Sim</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="nao" name="nao" />
+                                        <input type="checkbox" id="nao" name="liberado" value="nao" />
                                         <label for="nao">Não</label>
                                     </div>
 
@@ -184,7 +184,7 @@
                                 </div>
                                 <div class="detail-box">
                                     <label>Anexo PDF</label>
-                                    <input id="file_equip" type='file' required accept="application/pdf">
+                                    <input id="file_equip" type='file' required accept='image/*'>
                                     <p id="verificationResult"></p>
                                 </div>
                             </div>
@@ -214,7 +214,18 @@
     </footer>
     <!-- footer section -->
 
-
+    <script>
+        // Validação e envio pro checkbox
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]')
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                return ckeckbox[i].value;
+            }
+            else {
+                return checkbox[i].value;
+            }
+        }
+    </script>
 
     <!--script-->
     <script src="../public/js/equipinternos.js"></script>

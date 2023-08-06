@@ -1,20 +1,21 @@
-const { CadastroReports, Reports } = require('../models/reports_db');
-
-
+const { CadastroEquipamentos, Equipamentos } = require('../models/equipamentos_db');
 
 exports.postAddEquipamentos = (req, res, next) => {
 
     // Recebendo dados do formulario req.body
-    /* const nome = req.body.nome;
-    
+    const codigo = req.body.codigo;
+    const descricao = req.body.descricao;
+    const liberado = req.body.liberado;
 
-    let reports = new CadastroReports (
-        
+    let equipamentos = new CadastroEquipamentos (
+        codigo,
+        descricao,
+        liberado
     )
 
-    Reports.save(reports, function(salvoRep){
+    Equipamentos.save(equipamentos, function(salvoRep){
         console.log('Reports salvo:', salvoRep);
-    }); */
+    });
     res.redirect('/interno/inicio');
 }
 

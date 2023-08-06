@@ -57,8 +57,6 @@ router.get('/teste', (req, res, next) => {
 
 db = Dados.connect();
 
-
-
 /* Router para testes => POST */
 router.post('/upload', upload.single('arquivo'), (req, res) => {
     const arquivo = req.file;
