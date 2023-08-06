@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="icon" href="../public/images/s1.png">
+  <link rel="icon" href="/images/s1.png">
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>WebTech</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+
+  <!-- Custom styles for this template -->
+  <link href="../public/css/style.css" rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../public/css/responsive.css" rel="stylesheet" />
+  <link href="/css/responsive.css" rel="stylesheet" />
+
+  <!-- Função para pegar as -->
+  <script type="text/javascript" src="../public/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+
+  
+    <!--Comprimir PDF -->
+    <script type="text/javascript" src="../public/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+    <script type="text/javascript" src="../public/comprimir/jszip.min.js"></script>
+    <script type="text/javascript" src="../public/comprimir/jszip-utils.js"></script>
+    <script type="text/javascript" src="/comprimir/jszip.min.js"></script>
+    <script type="text/javascript" src="/comprimir/jszip-utils.js"></script>
+    <script type="text/javascript"></script>
+
+
+  <style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      $.getJSON('../data/cidades.json', function (data) {
+
+        var items = [];
+        var options = '<option value="">Escolha um Estado</option>';
+
+        $.each(data, function (key, val) {
+          options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+        });
+        $("#estados").html(options);
+
+        $("#estados").change(function () {
+
+          var options_cidades = '';
+          var str = "";
+
+          $("#estados option:selected").each(function () {
+            str += $(this).text();
+          });
+
+          $.each(data, function (key, val) {
+            if (val.nome == str) {
+              $.each(val.cidades, function (key_city, val_city) {
+                options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+              });
+            }
+          });
+
+          $("#cidades").html(options_cidades);
+
+        }).change();
+
+      });
+      $.getJSON('../data/paises.json', function (data) {
+        var itemsp = [];
+        var optionsp = '<option value="">Escolha um País</option>';
+
+        $.each(data, function (key, val) {
+          optionsp += '<option value="' + val.nome_pais + '">' + val.nome_pais + '</option>';
+        });
+        $("#pais_nascimento").html(optionsp);
+
+        $("#pais_nascimento").change(function () {
+
+          var options_cidades = '';
+          var str = "";
+
+          $("#pais_nascimento option:selected").each(function () {
+            str += $(this).text();
+          });
+
+
+        });
+      });
+      $.getJSON('../data/paises.json', function (data) {
+        var items2 = [];
+        var options2 = '<option value="">Escolha um País</option>';
+
+        $.each(data, function (key, val) {
+          options2 += '<option value="' + val.nome_pais + '">' + val.nome_pais + '</option>';
+        });
+        $("#nacionalidade").html(options2);
+
+        $("#nacionalidade").change(function () {
+
+          var options_cidades = '';
+          var str = "";
+
+          $("#nacionalidade option:selected").each(function () {
+            str += $(this).text();
+          });
+
+
+        });
+      });
+      // busca o cep
+      $("#txtCep").focusout(function () {
+        var cep = $("#txtCep").val();
+        cep = cep.replace("-", "");
+
+        var urlStr = "https://viacep.com.br/ws/" + cep + "/json/";
+
+        $.ajax({
+          url: urlStr,
+          type: "get",
+          dataType: "json",
+          success: function (data) {
+            console.log(data);
+
+            $("#txtCidade").val(data.localidade);
+            $("#txtEstado").val(data.uf);
+            $("#txtBairro").val(data.bairro);
+            $("#txtRua").val(data.logradouro);
+            $("#txtComplemento").val(data.complemento);
+          },
+          error: function (erro) {
+            console.log(erro);
+          }
+        });
+      });
+    });
+    ;
+
+  </script>
+</head>
+
+<body class="sub_page">
+
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="/">
+              <h3>WebTech</h3>
+            </a>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/cadastrocandidatos">Cadastro Candidatos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/cadastroreports"> Cadastro Reports</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/equipamentos"> Equipamentos Cadastrados </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login"> Login</a>
+                </li>
+                <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </ul>
+
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+  <!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12 ">
+          <div class="heading_container text-center">
+            
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-5 ">
+            <div class="form_container"><h1>
+              Cadastro de Candidatos
+            </h1>
+              <p>ATENÇÃO: o preenchimento dessas informações é de suma importância para o seu prosseguimento no
+                processo
+                seletivo. Todos os campos são
+                OBRIGATÓRIOS, então se atente às informações preenchidas.
+              </p>
+              <form action="/formulario" method="post">
+
+                <h4>Dados Pessoais</h4>
+
+                <div>
+                  <label>Nome completo do Candidato*:</label>
+                  <input type="text" name="nome_completo" required="required" id="nome" placeholder="Digite seu nome" />
+                </div>
+                <div>
+                  <label>Nome completo da Mãe*:</label>
+                  <input type="text" name="nome_mae" required="required" placeholder="Digite nome da mãe" />
+                </div>
+                <div>
+                  <label>Nome completo do Pai*:</label>
+                  <input type="text" name="nome_pai" required="required" placeholder="Digite o nome do pai" />
+                </div>
+                <div>
+                  <label>Sexo*:</label>
+                  <select name="sexo" name="sexo" required="required" id="sexo">
+                    <option>Escolher...</option>
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Estado Civil*:</label>
+                  <select name="estado_civil" required="required" id="estado_civil">
+                    <option value="">Escolher...</option>
+                    <option value="Solteiro">Solteiro</option>
+                    <option value="Casado">Casado</option>
+                    <option value="Separado">Separado</option>
+                    <option value="Divorciado">Divorciado</option>
+                    <option value="Viúvo">Viúvo</option>
+                    <option value="Amasiado">Amasiado</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Grau de Instrução*:</label>
+                  <select name="grau_instrucao" required="required" id="escolaridade">
+                    <option>Escolher...</option>
+                    <option value="Ensino Fundamental">Ensino Fundamental</option>
+                    <option value="Ensino Medio">Ensino Medio</option>
+                    <option value="Ensino Superior">Ensino Superior</option>
+                    <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
+                    <option value="Ensino Medio Incompleto">Ensino Medio Incompleto</option>
+                    <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Raça/Cor*:</label>
+                  <select name="raca" required="required" id="raça">
+                    <option>Escolher...</option>
+                    <option>Branco</option>
+                    <option>Pardo</option>
+                    <option>Moreno</option>
+                    <option>Indígena</option>
+
+                  </select>
+                </div>
+                <hr>
+                <h4>Dados de Nascimento</h4>
+                <div>
+                  <label>Data de Nascimento*:</label>
+                  <input id="date" name="data_nascimento" required="required" type="date">
+                </div>
+                <div> <label>Nacionalidade*:</label>
+                  <select  name="nacionalidade" id="nacionalidade">
+                    <option value=""></option>
+                  </select>
+                </div>
+                <div>
+                  <label>País de Nascimento*:</label>
+                  <select  name="pais_nascimento" id="pais_nascimento">
+                    <option value=""></option>
+                </div>
+                <div>
+                  <label>Estado de Nascimento:</label>
+                  <input required="required" name="estado_nascimento" type="text" placeholder="Estado de Nascimento">
+                </div>
+                <div>
+                  <label>Cidade de Nascimento:</label>
+                  <input required="required" name="cidade_nascimento" type="text"
+                    placeholder="Ex: São Paulo, Rio de Janeiro">
+                </div>
+                <hr>
+                <h4>Tamanhos</h4>
+                <div>
+                  <label>Número de Botina*:</label>
+                  <input required="required" name="numero_botina" type="number" placeholder="Ex:42">
+                </div>
+                <div>
+                  <label>Número da Calça*:</label>
+                  <input required="required" name="numero_calca" type="number" placeholder="Ex:38">
+                </div>
+                <div>
+                  <label>Tamanho de Camisa*:</label>
+                  <input required="required" name="tamanho_camisa" type="text" placeholder="Ex:G">
+                </div>
+                <hr>
+                <h4>Contato</h4>
+                <div>
+                  <label>DDD | Telefone*: </label>
+                  <input required="required" id="telefone" name="telefone_1" type="text" placeholder="Ex:11999999999">
+                </div>
+                <div>
+                  <label>DDD | Telefone2: </label>
+                  <input type="text" name="telefone_2" placeholder="Ex:11999999999">
+                </div>
+                <div>
+                  <label>Email: </label>
+                  <input required="required" id="email" name="email" type="email" placeholder="Digite seu email">
+                </div>
+                <hr>
+                <h4>Endereço:</h4>
+                <div>
+                  <div>
+                    <label>CEP: <input required="required" name="cep" type="text" id="txtCep"></label>
+                    <label>Cidade: <input required="required" name="cidade" type="text" id="txtCidade"></label>
+                    <label>Estado: <input required="required" name="estado" type="text" id="txtEstado"></label>
+                    <label>Bairro: <input required="required" name="bairro" type="text" id="txtBairro"></label>
+                    <label>Rua: <input required="required" name="rua" type="text" id="txtRua"></label>
+                    <label>Complemento: <input type="text" name="complemento" id="txtComplemento"></label>
+                  </div>
+            
+                      <hr>
+                      <h4>Carteira de Identidade, CPF e PIS</h4>
+                      <div>
+                        <label id="rg" for="rg">Número da Carteira de Identidade (RG)*:</label>
+                        <input required="required" name="numero_rg" type="number" placeholder="Ex: 99999999999" />
+                      </div>
+                      <div>
+                        <label for="org">Orgão Emisor da Carteira de Identidade:</label>
+                        <input required="required" type="text" name="emissor_rg" placeholder="Ex: (SSP, SJC, SJT)" />
+                      </div>
+                      <div>
+                        <label for="est">Estado do Orgão Emissor(RG)*:</label>
+                        <select name="emissor_estado" id="estados">
+                          <option value=""></option>
+                        </select>
+                        <select name="emissor_cidade" id="cidades">
+                        </select>
+                      </div>
+                      <div>
+                        <label for="DT">Data de Expedição da Identidade:</label>
+                        <input required="required" name="emissor_data" id="date" type="date">
+                      </div>
+                      <div>
+                        <label for="cpf">Número do CPF*:</label>
+                        <input required="required" name="cpf" type="cpf" placeholder="Ex: 99999999999" />
+                      </div>
+                      <div>
+                        <label>Número do PIS/PASEP*:</label>
+                        <input required="required" name="num_pis_pasep" type="number" placeholder="Ex: 99999999999" />
+                      </div>
+                      <hr>
+                      <h4>Outros</h4>
+                      <div>
+                        <label for="func">Função*:</label>
+                        <input required="required" name="funcoes_id" type="text"
+                          placeholder="Ex: Administrador Contratual" />
+                      </div>
+                      <div>
+                        <label for="func">Alojado*:</label>
+                        <select name="alojado" id="aloj">
+                          <option> Escolha uma opção</option>
+                          <option value="sim"> Sim </option>
+                          <option value="nao"> Não </option>
+
+                        </select>
+                      </div>
+                      <div>
+                        <label for="func">PCD*:</label>
+                        <select name="pcd" id="pcd">
+                          <option> Escolha uma opção</option>
+                          <option value="sim"> Sim </option>
+                          <option value="nao"> Não </option>
+                        </select>
+                      </div>
+                      <hr>
+                      <div>
+                        <h4>Anexos</h4>
+                        <label>Arquivo de Identidade(RG)*:</label>
+                        <input required="required" name="rg_url" id="file_equip" type='file' accept='image/*' />
+                        <label>Arquivo de CPF*:</label>
+                        <input required="required" name="cpf_url" id="file_equip" type='file' accept='image/*' />
+                        <label>Arquivo de Currículo*:</label>
+                        <input required="required" name="curriculo_url"id="file_equip" type='file' accept='image/*' />
+                        <label>Arquivo de CNH:</label>
+                        <input type='file' name="cnh_url" accept='image/*' id='file_equip' />
+                        <label>Arquivo de Certificado de Reservista:</label>
+                        <input type='file' name="reservista_url" accept='image/*' id='file_equip' />
+                        <p id="verificationResult"></p>
+                      </div>
+                      <div>
+                        <h5>POSSUI ALGUM PARENTE OU AMIGO QUE TRABALHA NA ALFA?</h5>
+                        <input type="button" id="btn_check" value="Sim">
+                        <input type="button" id="btn_nao" value="Não">
+                        <div class="tela_parentes">
+                        </div>
+                      </div>
+                      <hr>
+                      <div>
+                        <h5>Dependentes:</h5>
+                        <input type="button" id="btn_dependentes" value="Adicionar Dependentes">
+                        <div class="tela_dependentes">
+                        </div>
+                      </div>
+                      <div>
+                        <button type="submit" id="submit" class="btn_box">Enviar</button>
+                      </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- end contact section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="#">WebTech - PUC Minas</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+ <!--Comprimir PDF -->
+ <script type="text/javascript" src="../public/comprimir/jszip.min.js"></script>
+ <script type="text/javascript" src="../public/comprimir/jszip-utils.js"></script>
+ <script type="text/javascript" src="/comprimir/jszip.min.js"></script>
+ <script type="text/javascript" src="/comprimir/jszip-utils.js"></script>
+ <script type="text/javascript"></script>
+
+
+  <!--script-->
+  <script src="../public/js/candidatos.js"></script>
+  <script src="/js/candidatos.js"></script>
+  <!-- jQery -->
+  <script src="../public/js/jquery-3.4.1.min.js"></script>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+
+  <script src="../public/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <!-- bootstrap js -->
+  <script src="../public/js/bootstrap.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!--  OwlCarousel 2 - Filter -->
+  <script src="https://huynhhuynh.github.io/owlcarousel2-filter/dist/owlcarousel2-filter.min.js"></script>
+  <!-- custom js -->
+  <script src="../public/js/custom.js"></script>
+  <script src="/js/custom.js"></script>
+
+
+
+</body>
+
+</html>
