@@ -7,12 +7,12 @@ const router = express.Router();
 /*------- API -------- */
 // Configuracao da Rota geral
 // /admin/candidatos => GET
-router.get('/candidatos', adminController.getCandidatos);
+router.get('/reports', adminController.getCandidatos);
 
 // /admin/candidatos/:id => GET (Pesquisa por ID)
-router.get('/candidatos/:id(\\d+)', adminController.getIdCandidatos);
+router.get('/reports/:id(\\d+)', adminController.getIdCandidatos);
 
 // /admin/cadidatos/status => (pesquisa por categoria, aprovados e não aprovados)
-router.get('/candidatos/:status', adminController.getStatusCandidatos);
+/* router.get('/reports/:status', adminController.getStatusCandidatos); */
 
 module.exports = router;

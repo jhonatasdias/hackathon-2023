@@ -36,7 +36,7 @@ class Dados {
     static getDados(callback) {
         let connection = Dados.connect();
 
-        let sql = "select * from formulario";
+        let sql = "select * from reports";
         let query = connection.query(sql, function(error, results, fields) {
             if(error) throw error;
             // Retorna dados pela função callback
